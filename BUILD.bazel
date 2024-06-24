@@ -1,0 +1,15 @@
+java_binary(
+    name = "bazel-to-maven-build",
+    srcs = glob([
+        "src/main/java/**/*.java",
+    ]),
+    main_class = "com.canva.pomgen.Main",
+    deps = [
+        "@bazel_to_maven_build_maven_deps//:com_fasterxml_jackson_core_jackson_annotations",
+        "@bazel_to_maven_build_maven_deps//:com_fasterxml_jackson_core_jackson_core",
+        "@bazel_to_maven_build_maven_deps//:com_fasterxml_jackson_core_jackson_databind",
+    ],
+    resources = glob([
+        "src/main/resources/**/*",
+    ]),
+)
